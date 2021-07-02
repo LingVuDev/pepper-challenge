@@ -7,7 +7,7 @@
 }
 
 html {
-	font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 p {
@@ -15,71 +15,71 @@ p {
 }
 
 .nav {
-	display: flex;
-	flex-direction: row;
-	position: relative;
+  display: flex;
+  flex-direction: row;
+  position: relative;
 }
 
 /* Removes the radio button icon from the viewport */
 /* https://stackoverflow.com/questions/6293588/how-to-create-a-checkbox-with-a-clickable-label */
 .nav__item > input {
-	visibility: hidden;
-	position: absolute;
+  visibility: hidden;
+  position: absolute;
 }
 
 .nav__item > label > div {
-	padding: 8px;
-	background-color: var(--tab-bg-color);
+  padding: 8px;
+  background-color: var(--tab-bg-color);
 }
 
 /* Hide content by default and sets content under the tab `div` */
 .nav__item > .nav__item__content {
-	display: none;
-	position: absolute;
-	left: 0;
-	padding: 8px;
+  display: none;
+  position: absolute;
+  left: 0;
+  padding: 8px;
 }
 
 /* Displays content */
 /* Hint: Drawback of using input:checked for tabs is that it cannot be toggled */
 input:checked ~ .nav__item__content {
-	display: block;
-	background-color: var(--content-bg-color);
+  display: block;
+  background-color: var(--content-bg-color);
 }
 
 input:checked ~ label > div {
-	background-color: var(--tab-bg-color--selected);
-	border-bottom: none;
+  background-color: var(--tab-bg-color--selected);
+  border-bottom: none;
 }
 
 @media only screen and (max-width: 480px) {
-	.nav {
-		flex-direction: column;
-		border-radius: 30px;
-	}
+  .nav {
+    flex-direction: column;
+    border-radius: 30px;
+  }
 
-	.nav__item {
-		display: block;
-	}
+  .nav__item {
+    display: block;
+  }
 
-	.nav__item p {
-		margin: 0;
-	}
+  .nav__item p {
+    margin: 0;
+  }
 
-	.nav__item ~ .nav__item {
-		padding: 0;
-	}
+  .nav__item ~ .nav__item {
+    padding: 0;
+  }
 
-	.nav .nav__item .nav__item__content {
-		position: relative;
-	}
+  .nav .nav__item .nav__item__content {
+    position: relative;
+  }
 
-	.nav__item > label > div {
-		padding: 8px;
-		border-bottom: 1px var(--border-bg-color) solid;
-	}
+  .nav__item > label > div {
+    padding: 8px;
+    border-bottom: 1px var(--border-bg-color) solid;
+  }
 
-	input:checked ~ label > div {
-		border-bottom: 1px var(--border-bg-color--selected) solid;
-	}
+  input:checked ~ label > div {
+    border-bottom: 1px var(--border-bg-color--selected) solid;
+  }
 }
