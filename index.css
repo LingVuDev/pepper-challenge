@@ -2,6 +2,10 @@ html {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+p {
+  font-size: 14px;
+}
+
 .nav {
 	display: flex;
 	flex-direction: row;
@@ -14,28 +18,31 @@ html {
 }
 
 .nav__item > label > div {
-  padding: 8px;
+	padding: 8px;
+	background-color: grey;
 }
 
-
-.nav__item .nav__item__content {
+.nav__item > .nav__item__content {
 	display: none;
 	position: absolute;
 	left: 0;
+	padding: 8px;
 }
 
 input:checked ~ .nav__item__content {
 	display: block;
-  background-color: burlywood;
+	background-color: lightgrey;
 }
 
 input:checked ~ label > div {
-  background-color: burlywood;
+	background-color: lightgrey;
+	border-bottom: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 480px) {
 	.nav {
 		flex-direction: column;
+		border-radius: 30px;
 	}
 
 	.nav__item {
@@ -52,5 +59,14 @@ input:checked ~ label > div {
 
 	.nav .nav__item .nav__item__content {
 		position: relative;
+	}
+
+	.nav__item > label > div {
+		padding: 8px;
+		border-bottom: 1px lightgrey solid;
+	}
+
+	input:checked ~ label > div {
+		border-bottom: 1px grey solid;
 	}
 }
