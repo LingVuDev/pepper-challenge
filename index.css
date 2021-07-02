@@ -8,6 +8,16 @@ html {
 	position: relative;
 }
 
+.nav__item > input {
+	visibility: hidden;
+	position: absolute;
+}
+
+.nav__item > label > div {
+  padding: 8px;
+}
+
+
 .nav__item .nav__item__content {
 	display: none;
 	position: absolute;
@@ -16,12 +26,30 @@ html {
 
 input:checked ~ .nav__item__content {
 	display: block;
+  background-color: burlywood;
+}
+
+input:checked ~ label > div {
+  background-color: burlywood;
 }
 
 @media only screen and (max-width: 600px) {
 	.nav {
 		flex-direction: column;
 	}
+
+	.nav__item {
+		display: block;
+	}
+
+	.nav__item p {
+		margin: 0;
+	}
+
+	.nav__item ~ .nav__item {
+		padding: 0;
+	}
+
 	.nav .nav__item .nav__item__content {
 		position: relative;
 	}
