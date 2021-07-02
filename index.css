@@ -1,3 +1,11 @@
+:root {
+  --tab-bg-color: grey;
+  --tab-bg-color--selected: lightgrey;
+  --border-bg-color: lightgrey;
+  --border-bg-color--selected: grey;
+  --content-bg-color: lightgrey;
+}
+
 html {
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -12,6 +20,8 @@ p {
 	position: relative;
 }
 
+/* Removes the radio button icon from the viewport */
+/* https://stackoverflow.com/questions/6293588/how-to-create-a-checkbox-with-a-clickable-label */
 .nav__item > input {
 	visibility: hidden;
 	position: absolute;
@@ -19,9 +29,10 @@ p {
 
 .nav__item > label > div {
 	padding: 8px;
-	background-color: grey;
+	background-color: var(--tab-bg-color);
 }
 
+/* Hide content by default and sets content under the tab `div` */
 .nav__item > .nav__item__content {
 	display: none;
 	position: absolute;
@@ -29,13 +40,15 @@ p {
 	padding: 8px;
 }
 
+/* Displays content */
+/* Hint: Drawback of using input:checked for tabs is that it cannot be toggled */
 input:checked ~ .nav__item__content {
 	display: block;
-	background-color: lightgrey;
+	background-color: var(--content-bg-color);
 }
 
 input:checked ~ label > div {
-	background-color: lightgrey;
+	background-color: var(--tab-bg-color--selected);
 	border-bottom: none;
 }
 
@@ -63,10 +76,10 @@ input:checked ~ label > div {
 
 	.nav__item > label > div {
 		padding: 8px;
-		border-bottom: 1px lightgrey solid;
+		border-bottom: 1px var(--border-bg-color) solid;
 	}
 
 	input:checked ~ label > div {
-		border-bottom: 1px grey solid;
+		border-bottom: 1px var(--border-bg-color--selected) solid;
 	}
 }
