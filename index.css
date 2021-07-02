@@ -1,0 +1,15 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.nav .tab-content {
+  display: none;
+  position: absolute;
+  left: 0;
+}
+
+input:checked ~ section.tab-content {
+    display: block;
+}
