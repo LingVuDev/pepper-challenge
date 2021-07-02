@@ -1,9 +1,10 @@
 :root {
+	--s: 8px;
+  --border: 1px solid lightgrey;
+  --border--selected: 1px solid grey;
+  --content-bg-color: lightgrey;
   --tab-bg-color: grey;
   --tab-bg-color--selected: lightgrey;
-  --border-bg-color: lightgrey;
-  --border-bg-color--selected: grey;
-  --content-bg-color: lightgrey;
 }
 
 html {
@@ -28,7 +29,7 @@ p {
 }
 
 .nav__item > label > div {
-  padding: 8px;
+  padding: var(--s);
   background-color: var(--tab-bg-color);
 }
 
@@ -37,7 +38,7 @@ p {
   display: none;
   position: absolute;
   left: 0;
-  padding: 8px;
+  padding: var(--s);
 }
 
 /* Displays content */
@@ -74,11 +75,11 @@ input:checked ~ label > div {
   }
 
   .nav__item > label > div {
-    padding: 8px;
-    border-bottom: 1px var(--border-bg-color) solid;
+    padding: var(--s);
+    border-bottom: var(--border);
   }
 
   input:checked ~ label > div {
-    border-bottom: 1px var(--border-bg-color--selected) solid;
+    border-bottom: var(--border--selected);
   }
 }
