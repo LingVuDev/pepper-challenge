@@ -1,6 +1,6 @@
 # Pepper Frontend Challenge 1
 
-The task is to develop a css only accordation component which transforms to tabs for wider screens.
+The task is to develop a css only accordion component which transforms to tabs for wider screens.
 
 Requirements:
 * pure CSS, no JavaScript
